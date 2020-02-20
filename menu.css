@@ -1,0 +1,107 @@
+.menu ul{
+  list-style: none;
+}
+.menu ul li a{
+  padding: 10px;
+  display: block;
+}
+.menu input.menu-toggle-check{
+  display: none;
+}
+.menu .menu-toggle{
+  display: block;
+  cursor: pointer;
+  margin: 10px;
+}
+.menu .menu-toggle:empty{
+  border-top: solid 3px #000;
+  width: 25px;
+  padding: 3px 0;
+}
+.menu .menu-toggle-check:checked~div .menu-toggle:empty{
+  border: none;
+}
+.menu .menu-toggle-check:checked~div .menu-toggle:empty:after{
+  transform: rotate(45deg);
+  margin-top: -3px;
+  transition: all 0.2s linear;
+}
+.menu .menu-toggle-check:checked~div .menu-toggle:empty:before{
+  transform: rotate(-45deg);
+  transition: all 0.2s linear;
+}
+.menu .menu-toggle:empty:after{
+  content: " ";
+  height: 3px;
+  display: block;
+  background: #000;
+  margin-top: 3px;
+  transition: all 0.2s linear;
+}
+.menu .menu-toggle:empty:before{
+  content: " ";
+  height: 3px;
+  display: block;
+  background: #000;
+  transition: all 0.2s linear;
+}
+.menu input.menu-toggle-check:checked~ul{
+  display: block;
+}
+/*========================= HORIZONTAL MENU =============================*/
+.menu-hor{
+}
+@media (min-width:768px) {
+  .menu-hor ul li{
+    float: var(--dir);
+  }
+  .menu-hor .menu-toggle{
+    display: none;
+  }
+}
+@media (max-width:767px) {
+  .menu-hor > ul{
+    display: none;
+  }
+}
+/*========================= VERTICAL MENU =============================*/
+.menu-ver{
+}
+.menu-ver ul li:not(:last-child) a{
+  border-bottom: solid 1px var(--menu-border-color);
+}
+/*========================= FULLSCREAN MENU =============================*/
+.menu-fullscrean{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  background: transparent;
+  border: none;
+}
+.menu-fullscrean .menu-toggle-wrapper{
+  background: rgba(250,250,250,0.7);
+  display: table;
+  box-shadow: 1px 1px 10px #555;
+}
+.menu-fullscrean > ul{
+  min-height: 100vh;
+  width: auto;
+  display: none;
+}
+/*========================= NOT REQUIRED =============================*/
+body{
+  padding: 20px
+}
+:root{
+  --menu-bg-color: #f0f0f0;
+  --menu-border-color: #ccc;
+}
+.menu{
+  border: solid 1px var(--menu-border-color);
+  background-color: var(--menu-bg-color);
+}
+.menu li a:hover{
+  background-color: #ccc;
+}
